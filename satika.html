@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Satika - Traditional Indian Sarees</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Hind:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Hind', sans-serif;
+            background-color: #fdfafa;
+            color: #2c1810;
+            line-height: 1.6;
+        }
+        .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        .bg-saffron { background-color: #FF9933 !important; }
+        .bg-white { background-color: #FFFFFF !important; }
+        .bg-green { background-color: #138808 !important; }
+        .text-saffron { color: #FF9933 !important; }
+        .text-green { color: #138808 !important; }
+        .border-deep-red { border-color: #8B0000 !important; }
+        .text-deep-red { color: #8B0000 !important; }
+        .bg-red-gold {
+            background: linear-gradient(135deg, #8B0000 0%, #D4AF37 100%);
+        }
+        .bg-gold-white {
+            background: linear-gradient(135deg, #D4AF37 0%, #FFFFFF 100%);
+        }
+        .bg-silk {
+            background-image: url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d4a349a9-5131-42f2-8b09-e1b59a56c0ea.png');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        .hero-image {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d1bd139c-29fc-4b28-95ac-a40bd00a52c2.png');
+            min-height: 80vh;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+        .hero-text {
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+        }
+        .saree-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .saree-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        }
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+        .tagline {
+            font-style: italic;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+        }
+        .nav-link {
+            position: relative;
+            padding: 8px 0;
+            margin: 0 15px;
+        }
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #D4AF37;
+            transition: width 0.3s;
+        }
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        .traditional-pattern {
+            background-image: url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d534a1d1-8041-4251-91b8-0ff1ac816874.png');
+            background-repeat: repeat;
+            height: 30px;
+        }
+        .border-gold { border: 2px solid #D4AF37; }
+        .btn-gold {
+            background-color: #D4AF37;
+            color: #2c1810;
+            transition: background-color 0.3s;
+        }
+        .b…tn-gold:hover {
+            background-color: #B8860B;
+            color: white;
+        }
+        .zoom-effect {
+            transition: transform 0.5s;
+            overflow: hidden;
+        }
+        .zoom-effect:hover {
+            transform: scale(1.05);
+        }
+        .testimonial-card {
+            border-left: 4px solid #D4AF37;
+        }
+        footer {
+            background: linear-gradient(to right, #8B0000, #2c1810);
+            color: #f8f8f8;
+        }
+        .social-icon {
+            font-size: 24px;
+            margin: 0 10px;
+            color: #D4AF37;
+            transition: color 0.3s;
+        }
+        .social-icon:hover {
+            color: #FFFFFF;
+        }
+        .ethnic-border {
+            border-bottom: 3px dashed #D4AF37;
+        }
+        .offer-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #D4AF37;
+            color: #8B0000;
+            padding: 5px 10px;
+            font-weight: bold;
+            border-radius: 3px;
+            z-index: 1;
+        }
+        .handcrafted-icon {
+            color: #D4AF37;
+            font-size: 1.5rem;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <div class="w3-top">
+        <div class="w3-bar w3-padding-large bg-red-gold">
+            <a href="#" class="w3-bar-item w3-button">
+                <span class="logo text-white playfair">SATIKA</span>
+            </a>
+            <div class="w3-right w3-hide-small">
+                <a href="#home" class="w3-bar-item w3-button nav-link text-white">Home</a>
+                <a href="#about" class="w3-bar-item w3-button nav-link text-white">About</a>
+                <a href="#collections" class="w3-bar-item w3-button nav-link text-white">Collections</a>
+                <a href="#traditions" class="w3-bar-item w3-button nav-link text-white">Traditions</a>
+                <a href="#testimonials" class="w3-bar-item w3-button nav-link text-white">Testimonials</a>
+                <a href="#contact" class="w3-bar-item w3-button nav-link text-white">Contact</a>
+            </div>
+            <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="toggleMenu()">☰</a>
+        </div>
+        <div id="mobileNav" class="w3-bar-block w3-hide w3-hide-large w3-hide-medium bg-red-gold">
+            <a href="#home" class="w3-bar-item w3-button text-white">Home</a>
+            <a href="#about" class="w3-bar-item w3-button text-white">About</a>
+            <a href="#collections" class="w3-bar-item w3-button text-white">Collections</a>
+            <a href="#traditions" class="w3-bar-item w3-button text-white">Traditions</a>
+            <a href="#testimonials" class="w3-bar-item w3-button text-white">Testimonials</a>
+            <a href="#contact" class="w3-bar-item w3-button text-white">Contact</a>
+        </div>
+    </div>
+
+    <!-- Header with hero image -->
+    <header class="hero-image w3-display-container" id="home">
+        <div class="hero-text  w3-center">
+            <h1 class="w3-xxlarge playfair text-white">SATIKA</h1>
+            <p class="tagline w3-large text-white">"साटिका नारीणां संस्कृति: स्वरूपम्।"</p>
+            <p class="w3-medium">The Essence of Culture in Every Woman</p>
+            <a href="#collections" class="w3-button w3-padding-large w3-large w3-margin-top btn-gold">Explore Collection</a>
+        </div>
+    </header>
+
+    <!-- Traditional pattern divider -->
+    <div class="traditional-pattern"></div>
+
+    <!-- About Section -->
+    <div class="w3-container w3-padding-64 bg-gold-white" id="about">
+        <div class="w3-row-padding">
+            <div class="w3-col m6">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/ea4b88b6-640d-4121-a508-4ecc080112c8.png" alt="Handcrafted traditional Indian saree with intricate designs" class="w3-round-large w3-image zoom-effect">
+            </div>
+            <div class="w3-col m6 w3-padding-large">
+                <h1 class="w3-center playfair text-deep-red">About Satika</h1>
+                <h5 class="w3-center">Tradition Woven with Elegance</h5>
+                <p class="w3-large">Since 1995, Satika has been synonymous with authentic Indian handloom sarees that celebrate the rich cultural heritage of India. Each saree is a masterpiece, meticulously crafted by skilled artisans who have inherited these traditional techniques over generations.</p>
+                <p class="w3-large">Our collection represents the diverse weaving traditions from across India - from the luxurious Banarasis of Varanasi to the vibrant Kanjeevarams of Tamil Nadu, the delicate Chanderis of Madhya Pradesh to the elegant Tant from West Bengal.</p>
+                <p class="w3-large">
+                    <i class="fa fa-star handcrafted-icon"></i> Handcrafted with precision<br>
+                    <i class="fa fa-heart handcrafted-icon"></i> Premium quality materials<br>
+                    <i class="fa fa-diamond handcrafted-icon"></i> Authentic traditional designs
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Traditional pattern divider -->
+    <div class="traditional-pattern"></div>
+
+    <!-- Collections Section -->
+    <section>
+    <div class="w3-container w3-padding-64 bg-white" id="collections">
+        <div class="w3-row-padding w3-center">
+            <h1 class="playfair text-deep-red">Our Collections</h1>
+            <p class="w3-large">Explore our exquisite range of traditional sarees</p>
+            
+            <div class="w3-col l3 m6 w3-margin-bottom">
+                <div class="w3-card saree-card">
+                    <div class="w3-display-container">
+                        <div class="offer-badge">New</div>
+                        <img src="IMG/b1.webp" class="w3-image">
+                    </div>
+                    <div class="w3-container w3-center">
+                    <h3 class="text-deep-red">Banarasi Silk</h3>
+                        <p>Elegant silk sarees with intricate zari work</p>
+                        <p class="w3-large text-green"><b>From ₹15,999</b></p>
+                        <a href="banarsi.html"><button class="w3-button w3-round btn-gold w3-margin-bottom">Buy</button></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="w3-col l3 m6 w3-margin-bottom">
+                <div class="w3-card saree-card">
+                    <img src="IMG/j1.webp" width="355px" class="w3-image">
+                    <div class="w3-container w3-center">
+                        <h3 class="text-deep-red">Gota patti</h3>
+                        <p>Traditional rajasthani Chunri Gota patti</p>
+                        <p class="w3-large text-green"><b>From ₹12,999</b></p>
+                        <a href="banarsi.html"><button class="w3-button w3-round btn-gold w3-margin-bottom">Buy</button></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="w3-col l3 m6 w3-margin-bottom">
+                <div class="w3-card saree-card">
+                    <img src="IMG/c1.webp" height="400px" width="325px" alt="Orange Chanderi cotton silk saree with delicate motifs" class="w3-image">
+                    <div class="w3-container w3-center">
+                        <h3 class="text-deep-red">Chanderi silk</h3>
+                        <p>Lightweight and elegant cotton silk sarees</p>
+                        <p class="w3-large text-green"><b>From ₹7,999</b></p>
+                        <a href="banarsi.html"><button class="w3-button w3-round btn-gold w3-margin-bottom">Buy</button></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="w3-col l3 m6 w3-margin-bottom">
+                <div class="w3-card saree-card">
+                    <div class="w3-display-container">
+                        <div class="offer-badge">Popular</div>
+                        <img src="IMG/o.jpg"  width="354px" alt="Red bridal saree with heavy embroidery and golden border" class="w3-image">
+                    </div>
+                    <div class="w3-container w3-center">
+                        <h3 class="text-deep-red">Maharashtrain traditional saree</h3>
+                        <p>Exquisite bridal sarees for your special day</p>
+                        <p class="w3-large text-green"><b>From ₹25,999</b></p>
+                        <a href="banarsi.html"><button class="w3-button w3-round btn-gold w3-margin-bottom">Buy</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+    <section>
+    <div class="w3-container w3-padding-64 bg-white" id="collections">
+        <div class="w3-row-padding w3-center">
+            <div class="w3-col l3 m6 w3-margin-bottom">
+                <div class="w3-card saree-card">
+                    <div class="w3-display-container">
+                        <div class="offer-badge">New</div>
+                        <img src="IMG/bb1.jpg" width="500px" class="w3-image">
+                    </div>
+                    <div class="w3-container w3-center">
+                    <h3 class="text-deep-red">Bengoli</h3>
+                        <p>Elegant silk sarees with intricate zari work</p>
+                        <p class="w3-large text-green"><b>From ₹15,999</b></p>
+                        <a href="banarsi.html"><button class="w3-button w3-round btn-gold w3-margin-bottom">Buy</button></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="w3-col l3 m6 w3-margin-bottom">
+                <div class="w3-card saree-card">
+                    <img src="IMG/g1.jpg" width="302px" class="w3-image">
+                    <div class="w3-container w3-center">
+                        <h3 class="text-deep-red">Gharchola saree</h3>
+                        <p>Traditional South Indian silk masterpiece</p>
+                        <p class="w3-large text-green"><b>From ₹12,999</b></p>
+                        <a href="banarsi.html"><button class="w3-button w3-round btn-gold w3-margin-bottom">Buy</button></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="w3-col l3 m6 w3-margin-bottom">
+                <div class="w3-card saree-card">
+                    <img src="IMG/l.webp" width="350px" alt="Orange Chanderi cotton silk saree with delicate motifs" class="w3-image">
+                    <div class="w3-container w3-center">
+                        <h3 class="text-deep-red">Kanchipuram</h3>
+                        <p>Lightweight and elegant cotton silk sarees</p>
+                        <p class="w3-large text-green"><b>From ₹7,999</b></p>
+                        <a href="banarsi.html"><button class="w3-button w3-round btn-gold w3-margin-bottom">Buy</button></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="w3-col l3 m6 w3-margin-bottom">
+                <div class="w3-card saree-card">
+                    <div class="w3-display-container">
+                        <div class="offer-badge">Popular</div>
+                        <img src="IMG/od.webp"  width="394px" alt="Red bridal saree with heavy embroidery and golden border" class="w3-image">
+                    </div>
+                    <div class="w3-container w3-center">
+                        <h3 class="text-deep-red">Bridal Collection</h3>
+                        <p>Exquisite bridal sarees for your special day</p>
+                        <p class="w3-large text-green"><b>From ₹25,999</b></p>
+                        <a href="banarsi.html"><button class="w3-button w3-round btn-gold w3-margin-bottom">Buy</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+    
+    <!-- Traditions Section -->
+    <div class="w3-container w3-padding-64 bg-silk" id="traditions">
+        <div class="w3-row-padding w3-center">
+            <h1 class="playfair text-white">Indian Saree Traditions</h1>
+            <p class="w3-large w3-text-white">Celebrating the diversity of Indian weaving heritage</p>
+            
+            <div class="w3-col m4 w3-padding">
+                <div class="w3-card w3-padding saree-card bg-white">
+                    <i class="fa fa-map-marker w3-xxlarge text-deep-red"></i>
+                    <h3 class="text-deep-red">Regional Varieties</h3>
+                    <p>Discover the unique characteristics of sarees from different regions of India, each with its own distinctive weaving techniques, motifs, and cultural significance.</p>
+                </div>
+            </div>
+            
+            <div class="w3-col m4 w3-padding">
+                <div class="w3-card w3-padding saree-card bg-white">
+                    <i class="fa fa-history w3-xxlarge text-deep-red"></i>
+                    <h3 class="text-deep-red">Historical Significance</h3>
+                    <p>Learn about the ancient origins of saree weaving in India, dating back to the Indus Valley Civilization, and how it has evolved over thousands of years.</p>
+                </div>
+            </div>
+            
+            <div class="w3-col m4 w3-padding">
+                <div class="w3-card w3-padding saree-card bg-white">
+                    <i class="fa fa-magic w3-xxlarge text-deep-red"></i>
+                    <h3 class="text-deep-red">Weaving Techniques</h3>
+                    <p>Explore the intricate handloom and embroidery techniques passed down through generations, including zari, kantha, chikankari, and bandhani.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <div class="w3-container w3-padding-64 bg-white" id="testimonials">
+        <div class="w3-row-padding">
+            <h1 class="w3-center playfair text-deep-red">Customer Testimonials</h1>
+            <p class="w3-center w3-large">What our beloved customers say about us</p>
+            
+            <div class="w3-col m4 w3-padding">
+                <div class="w3-card w3-padding testimonial-card">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/ce3e4e5b-1b2a-417e-9a88-7c8c85d600d5.png" alt="Portrait of satisfied customer Anjali Sharma" class="w3-circle w3-margin-bottom" style="width:80px">
+                    <h3 class="text-deep-red">Anjali Sharma</h3>
+                    <p class="w3-opacity">Delhi</p>
+                    <p>"My Satika Kanjeevaram saree received countless compliments at my brother's wedding. The craftsmanship is exceptional and the colors are so vibrant!"</p>
+                </div>
+            </div>
+            
+            <div class="w3-col m4 w3-padding">
+                <div class="w3-card w3-padding testimonial-card">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/f8252c5b-35be-4e52-afe8-cd19dca3aa1f.png" alt="Portrait of satisfied customer Priya Patel" class="w3-circle w3-margin-bottom" style="width:80px">
+                    <h3 class="text-deep-red">Priya Patel</h3>
+                    <p class="w3-opacity">Mumbai</p>
+                    <p>"I've purchased three sarees from Satika, and each one is a masterpiece. The attention to detail and quality of fabric is unmatched. Highly recommend!"</p>
+                </div>
+            </div>
+            
+            <div class="w3-col m4 w3-padding">
+                <div class="w3-card w3-padding testimonial-card">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/2c4976ce-cbbb-4b44-9848-9cefaec8b1b0.png" alt="Portrait of satisfied customer Rhea Kapoor" class="w3-circle w3-margin-bottom" style="width:80px">
+                    <h3 class="text-deep-red">Rhea Kapoor</h3>
+                    <p class="w3-opacity">Chennai</p>
+                    <p>"The bridal collection at Satika is exquisite. I found my dream wedding saree here, and it made me feel like a queen on my special day."</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="w3-container w3-padding-64 bg-gold-white" id="contact">
+        <h1 class="w3-center playfair text-deep-red">Contact Us</h1>
+        <p class="w3-center w3-large">We'd love to hear from you</p>
+        
+        <div class="w3-row-padding w3-section">
+            <div class="w3-col m6">
+                <p><i class="fa fa-map-marker w3-text-deep-red"></i> 123 Heritage Lane, Crafts District, Varanasi, UP, India</p>
+                <p><i class="fa fa-phone w3-text-deep-red"></i> Phone: +91 98765 43210</p>
+                <p><i class="fa fa-envelope w3-text-deep-red"></i> Email: contact@satika.com</p>
+                
+                <div class="w3-large w3-margin-top">
+                    <h3 class="text-deep-red">Store Hours</h3>
+                    <p>Monday - Saturday: 10:00 AM - 8:00 PM</p>
+                    <p>Sunday: 11:00 AM - 6:00 PM</p>
+                </div>
+            </div>
+            
+            <div class="w3-col m6">
+                <form class="w3-card w3-padding">
+                    <div class="w3-section">
+                        <label class="text-deep-red"><b>Name</b></label>
+                        <input class="w3-input w3-border" type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="w3-section">
+                        <label class="text-deep-red"><b>Email</b></label>
+                        <input class="w3-input w3-border" type="text" placeholder="Your Email" required>
+                    </div>
+                    <div class="w3-section">
+                        <label class="text-deep-red"><b>Message</b></label>
+                        <textarea class="w3--input w3-border" placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <a href="banarsi.html"><button type="submit" class="w3-button w3-round btn-gold w3-right">Send Message</button></a>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="w3-container w3-padding-32 w3-center">
+        <div class="w3-row-padding">
+            <div class="w3-third">
+                <h3 class="playfair text-white">SATIKA</h3>
+                <p class="tagline w3-medium">"साटिका नारीणां संस्कृति: स्वरूपम्।"</p>
+                <p>Preserving tradition, empowering artisans, celebrating culture</p>
+            </div>
+            
+            <div class="w3-third">
+                <h3 class="text-white">Connect With Us</h3>
+                <div class="w3-section">
+                    <a href="#" class="social-icon"><i class="fa fa-facebook-official"></i></a>
+                    <a href="#" class="social-icon"><i class="fa fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fa fa-pinterest"></i></a>
+                    <a href="#" class="social-icon"><i class="fa fa-twitter"></i></a>
+                </div>
+                <p>Subscribe to our newsletter for updates</p>
+                <input type="email" placeholder="Your Email" class="w3-input w3-border w3-round" style="width:80%; margin:0 auto">
+                <button class="w3-button btn-gold w3-round w3-margin-top">Subscribe</button>
+            </div>
+            
+            <div class="w3-third">
+                <h3 class="text-white">Quick Links</h3>
+                <p><a href="#home" class="w3-text-white">Home</a></p>
+                <p><a href="#collections" class="w3-text-white">Collections</a></p>
+                <p><a href="#traditions" class="w3-text-white">Traditions</a></p>
+                <p><a href="#contact" class="w3-text-white">Contact</a></p>
+            </div>
+        </div>
+        0
+        <div class="ethnic-border w3-margin-top"></div>
+        
+        <p class="w3-medium w3-padding-16">© 2023 Satika Traditional Sarees. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            var x = document.getElementById("mobileNav");
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+            } else { 
+                x.className = x.className.replace(" w3-show", "");
+            }
+        }
+    </script>
+</body>
+</html>
